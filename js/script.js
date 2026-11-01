@@ -16,4 +16,37 @@ question.forEach(function(button) {
     });
   });
 });
+
+let resultsButton = document.querySelector("#show-results");
+resultsButton.addEventListener("click", function() {
+    let result = getResults(answers);
+    console.log(result);
+    
+});
+
+function getResults(array){
+    let num = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === "A") {
+            num = num + 1;
+        } else if (array[i] === "B") {
+            num = num + 2;
+        } else if (array[i] === "C") {
+            num = num + 3;
+        } else {
+            num = num + 4;
+        }
+    }
+    let result = "";
+    if (num <= 4){
+        result = "Stetson"
+    } else if (num > 4 && num <= 8){
+        result = "Baseball Cap"
+    } else if (num > 8 && num <= 12){
+        result = "Fedora"
+    } else {
+        result = "Top Hat"
+    }
+    return result;
+}
    
