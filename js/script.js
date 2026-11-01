@@ -17,11 +17,9 @@ question.forEach(function(button) {
   });
 });
 
-let resultsButton = document.querySelector("#show-results");
+let resultsButton = document.getElementById("#show-results");
 resultsButton.addEventListener("click", function() {
-    let result = getResults(answers);
-    console.log(result);
-    
+    getResults(answers);
 });
 
 function getResults(array){
@@ -47,6 +45,8 @@ function getResults(array){
     } else {
         result = "Top Hat"
     }
-    return result;
+    
+    let resultsDisplay = document.getElementById("results-container");
+    resultsDisplay.textContent = `You are a ${result}`;
 }
    
