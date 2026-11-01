@@ -1,5 +1,5 @@
 console.log("script.js connected!");
-let question = document.querySelectorAll("#question-1");
+let question = document.querySelectorAll("#question");
 
 let answers = [];
 
