@@ -1,17 +1,19 @@
 console.log("script.js connected!");
-let question = document.querySelectorAll(".question-block");
+let question = document.querySelectorAll("#question-1");
 
 let answers = [];
 
-question.forEach(".question-block", (q) => {
-  buttons = q.querySelectorAll(".btn");
-  buttons.forEach((button) => {
-    button.classList.remove("selected");
-    button.addEventListener("click", () => {
-      let ans = button.getAttribute("data-answer");
-      answers.push(ans);
-      button.classList.add("selected");
-      console.log(answers);
+question.forEach(function(button) {
+  button.querySelectorAll(".answer-btn").forEach(function(answerButton) {
+    answerButton.addEventListener("click", function() {
+        button.querySelectorAll(".answer-btn").forEach(function(btn){
+            btn.classList.remove("selected");
+        });
+        let ans = answerButton.getAttribute("data-answer");
+        answerButton.classList.add("selected");
+        answers.push(ans);
+        console.log(answers);
     });
   });
 });
+   
